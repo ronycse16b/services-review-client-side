@@ -5,7 +5,7 @@ const Topber = () => {
     return (
         
             <div class="top-bar-area inc-pad bg-gradient text-white">
-<div class="container mx-auto flex justify-between  py-6 lg:px-52">
+<div class="container mx-auto flex justify-between  py-4 lg:px-52">
  <div>
     <span>Dhaka</span> |
     <span> support@computersolution.com</span>

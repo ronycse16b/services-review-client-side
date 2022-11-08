@@ -4,7 +4,7 @@ import './Navber.css';
 const Navber = () => {
     return (
         <div>
-            <div className="navbar  min-h-24 container mx-auto lg:px-52">
+            <div className="navbar  min-h-24 container mx-auto lg:px-48">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -25,7 +25,7 @@ const Navber = () => {
         <li><a>Item 3</a></li>
       </ul>
     </div>
-    <a className="btn btn-ghost normal-case text-xl">Computer Solution</a>
+    <a className="btn btn-ghost normal-case text-3xl font-bold">Computer Solution</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal p-0">
@@ -43,7 +43,7 @@ const Navber = () => {
       <li><a>Item 3</a></li>
     </ul>
   </div>
-  <div className="navbar-end">
+  <div className="navbar-end sm:none">
     <a className="btn">Get started</a>
   </div>
 </div>
