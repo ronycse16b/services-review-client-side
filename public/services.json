@@ -1,0 +1,61 @@
+[
+    {
+      
+      "price":"1000",
+      "isUser": false,
+      "rating": "⭐️⭐️⭐️⭐️",
+      "title": "Windows Operating System Change",
+      "img": "https://cdn.mos.cms.futurecdn.net/4ssNsnKqgMkNKEDc57GikD.jpg",
+      "details": "Do you know those pesky reminders that pop up on your monitor? They are always reminding you that your applications and drivers are out of date. It always seems like they rear their ugly reminders right when you’re in the middle of something important. Well, you should follow them and keep your computer up to date. And if you’re running really slow, like still cruising with Windows XP, then it might be time to upgrade to a newer operating system.f your OS is so out of date that you constantly have to patch it, then you might consider upgrading it. Windows and Apple release a new OS every few years, and keeping it current will help you. By upgrading your machine’s OS, you make it compatible with the newest and most innovative programs. Don’t take us wrong and think we are suggesting being an earlier adopter by immediately upgrading to new OS once initially released, but keeping your OS up-to-date also means that you will be able to open files that you receive from other people without problems."
+       
+    },
+    {
+      
+      "price":"1500",
+      "isUser": true,
+      "rating": "⭐️⭐️⭐️",
+      "title": "Driver Solution",
+      "img": "https://www.addictivetips.com/app/uploads/2021/02/DriverPack-Solution-1024x576.png",
+      "details": "The need to seek and install drivers each time when you reinstall Windows is, in our opinion, one of the most significant flaws of the entire Windows family so quoted Artur Kuzyakov as the reason he developed DriverPack Solutions back in 2008. Updating your Windows drivers one by one can be a painfully slow process. This remains the single best thing about this driver solution – it was created for one purpose, and it does this job well. DriverPack Solution is popular for personal and professional use. The process is automated making it easy to navigate for beginners and the vast database of drivers (the biggest in the world) makes this an attractive solution for professionals"
+    },
+    {
+      
+      "price":"800",
+      "isUser": false,
+      "rating": "⭐️⭐️⭐️⭐️⭐️",
+      "title": "Printer Connecting Problems",
+      "img":"https://i.ytimg.com/vi/x2UuHYHN_fM/maxresdefault.jpg",
+      "details":"Some printer connection problems are the result of badly connected cables. Make sure that the printer's power cord is plugged into a mains socket and that the printer cable is properly connected to the computer.If your printer is connected to a USB port on your computer, check to see if the USB connection is at fault. we can solve any printer issue here you can try to our best service"
+
+    },
+    {
+      
+      "price":"500",
+      "isUser": false,
+      "rating": "⭐️⭐️⭐️",
+      "title": "Bluetooth not working",
+      "img": "https://www.techbout.com/wp-content/uploads/2017/10/fix-for-bluetooth-not-working-in-windows-10.png",
+      "details": "Bluethooth devise isnt working in Windows 10? you have support bluetooth but not available now you are not solve your problem? dont worry about we are solving this any problem of bluetooth ! you will be setisfy on your device and you will be able to continue working on bluetooth ! you will be setisfy on your device"
+
+    },
+    {
+      
+      "price":"5000",
+      "isUser": true,
+      "rating": "⭐️⭐️",
+      "title": "Any Error Solving",
+      "img": "https://i.ytimg.com/vi/DJTuG-OJTTg/maxresdefault.jpg",
+      "details":"Is your pc not working properly? hang on your device, try again later error message, show  unnecessary error message and you can install a new version you n solve your problem any where don't worry about this we provided for you 100% fixed issues you can depend us we also try to fixed  issue 404 Abend Abort, Ignore, Retry, Fail Access denied  Blue Screen of Death (BSoD) Critical error Destination host unreachable Disk boot failure Drop in Drop out Fatal exception File not found General Protection Fault Guru Meditation Hard error Hardware conflict Human error Illegal command Illegal operation Inherent error"
+
+    },
+    {
+      
+      "price":"600",
+      "isUser": false,
+      "rating": "⭐️⭐️⭐️⭐️",
+      "title": "Laptop WIFI not Working",
+      "img": "https://i.ytimg.com/vi/avb8ixMs-zI/maxresdefault.jpg",
+      "details": "If your Wi-Fi isn’t working, you may have some wireless adapter issues, so we encourage you to inspect your adapter settings and ensure everything is configured correctly.One way to test it is to try to access your router settings page, but many reported that the Wi-Fi adapter wouldn’t connect to the router. This can be due to your drivers, so ensure they are up to date. We explored this issue in depth in our Wi-Fi adapter not working guide, so we encourage you to visit it for more solutions"
+
+    }
+  ]
