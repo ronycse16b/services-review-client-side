@@ -1,0 +1,14 @@
+.custom-bg{
+    background: rgb(2 20 32)!important;
+  height: 400px;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .custom-bg{
+     height: auto;
+    }
+   }
+.link-hover{
+line-height: 2rem;
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import bg from './imges/bg.jpg'
+import bg2 from './imges/bg2.jpg'
 
 const Banner = () => {
     return (
@@ -7,7 +7,7 @@ const Banner = () => {
    
               <div className="relative ">
                 <img
-                  src={bg}
+                  src={bg2}
                   className="absolute inset-0 object-cover w-full h-full min-h-fit "
                   alt=""
                 />
@@ -15,7 +15,7 @@ const Banner = () => {
                   <div className="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-16  ">
                     <div className="flex flex-col items-center justify-between xl:flex-row ">
                       <div className="w-full max-w-xl   xl:pr-16 xl:w-7/12 lg:mb-8 ">
-                        <h2 className="max-w-lg mb-12 font-sans lg:text-5xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
+                        <h2 className="max-w-lg mb-12 font-sans lg:text-6xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
                           Computer Solution
                 
                         </h2>
@@ -29,7 +29,7 @@ const Banner = () => {
                           aria-label=""
                           className="inline-flex items-center font-semibold tracking-wider transition-colors duration-200 text-teal-accent-400 hover:text-teal-accent-700"
                         >
-                        <button className="btn btn-outline border-white text-white ">Find Out More</button>
+                        <button className="btn btn-outline border-white hover:text-black hover:bg-white text-white ">Find Out More</button>
                    
                         </a>
                       </div>
