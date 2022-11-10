@@ -1,20 +1,30 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import {useLoaderData,} from "react-router-dom";
+import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 import SingleServices from './SingleServices';
 
 const Service = () => {
+
+const auth =useContext(AuthContext);
+console.log(auth);
 
 const service = useLoaderData();
 console.log(Service);
 
     return (
        <section>
-         <div className='bg-fixed' style={{ 
+         <div className='bg-fixed ' style={{ 
             backgroundImage: `url("https://panci-electronic.com/images/Computer1.jpg")`,height: '300px'
           }}>
-            <h1  className='text-center  lg:pt-40  text-black text-3xl font-bold'> All Services  /</h1>
+             <div className="hero-overlay bg-opacity-60 flex items-center justify-center">
+             <h1  className='text-center   text-white text-3xl font-bold'> All Services  /</h1>
+             </div>
+            
+           
+            
         </div>
+    
 
 
         <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">

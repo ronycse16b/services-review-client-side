@@ -1,8 +1,9 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 const SingleServices = ({single_s}) => {
 
-    const {title,img,details,price,rating} =single_s;
+    const {title,img,details,price,rating,_id} =single_s;
     return (
         <div className="overflow-hidden transition-shadow duration-300 bg-white rounded shadow-sm">
         <img
@@ -35,13 +36,13 @@ const SingleServices = ({single_s}) => {
           <p className="mb-2 text-gray-700">
            {details.length >100?details.slice(0,190)+"...." :details }
           </p>
-          <a
-            href="/"
+          <Link to ={`/services/details/${_id}`}
+     
             aria-label=""
             className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
           >
             Learn more
-          </a>
+          </Link>
         </div>
       </div>
     );
