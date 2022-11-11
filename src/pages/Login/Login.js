@@ -51,7 +51,7 @@ const Login = () => {
 
         providerLogin(googleProvider)
             .then(result => {
-
+            navigate(from,{replace: true});
             })
             .catch(error => {
                 setError(error.message);
@@ -68,7 +68,7 @@ const Login = () => {
         gitProviderLogin(githunProvider)
             .then(result => {
 
-
+                navigate(from,{replace: true});
             })
             .catch(error => {
                 setError(error.message);

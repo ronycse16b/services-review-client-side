@@ -2,8 +2,10 @@ import Main from "../layout/Main";
 import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Login/Register";
+import MyReview from "../pages/MyReview/MyReview";
 import Service from "../pages/Service/Service";
 import ServiceDetails from "../pages/Service/ServiceDetails";
+import ProtectRoutes from "./ProtectRoutes";
 
 const { createBrowserRouter } = require("react-router-dom");
 
@@ -44,6 +46,16 @@ const router = createBrowserRouter([
         {
             path: `/register`,
             element: <Register></Register>,
+           
+        },
+        {
+            path: `/addservices`,
+            element: <Register></Register>,
+           
+        },
+        {
+            path: `/reviews`,
+            element: <ProtectRoutes><MyReview></MyReview>,</ProtectRoutes>
            
         },
         

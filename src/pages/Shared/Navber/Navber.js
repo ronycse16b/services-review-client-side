@@ -60,17 +60,27 @@ const Navber = () => {
             <Link to='/services'
 
               aria-label="home"
-              title="home"
+              title="Services"
               className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
             >
               Services
             </Link>
           </li>
           <li>
+            <Link to='reviews'
+              aria-label=" My Reviews"
+              title="My Reviews"
+              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 mr-4"
+            >
+              My Reviews
+            </Link>
+          </li>
+
+          <li>
             <Link to=''
 
               aria-label="About us"
-              title="About us"
+              title="Blog"
               className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
             >
               Blog
@@ -80,13 +90,17 @@ const Navber = () => {
             {
               user?.uid ?
                 <div className="flex items-center">
-                  <Link to=''
-                    aria-label=" My Reviews"
-                    title="My Reviews"
-                    className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 mr-4"
-                  >
-                    My Reviews
-                  </Link>
+                  <li>
+                    <Link to='/addservices'
+
+                      aria-label="home"
+                      title="addservices"
+                      className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 mr-5"
+                    >
+                      Add Services
+                    </Link>
+                  </li>
+
                   <span className="font-bold">{user?.displayName}</span>
                   <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
                     {
