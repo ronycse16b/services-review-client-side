@@ -1,8 +1,9 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 
 const SingleBannerService = ({single_s}) => {
 
-const {title,img,details,price,rating} =single_s;
+const {title,img,details,price,rating,_id} =single_s;
 
     return (
         <div>
@@ -15,7 +16,7 @@ const {title,img,details,price,rating} =single_s;
           <div className="p-5 border border-t-0">
             <p className="mb-3 text-xs font-bold tracking-wide uppercase">
               <a
-                href="/"
+             
                 className="transition-colors duration-200 text-blue-gray-900 hover:text-deep-purple-accent-700"
                 aria-label="Category"
                 title="traveling"
@@ -26,7 +27,7 @@ const {title,img,details,price,rating} =single_s;
               <span className="text-gray-600">— Ratings:{rating}</span>
             </p>
             <a
-              href="/"
+           
               aria-label="Category"
               title="Visit the East"
               className="inline-block mb-3 text-2xl font-bold leading-5 transition-colors duration-200 hover:text-deep-purple-accent-700"
@@ -37,13 +38,13 @@ const {title,img,details,price,rating} =single_s;
             <p className="mb-2 text-gray-700">
              {details.length >100?details.slice(0,180)+"...." :details }
             </p>
-            <a
-              href="/"
+            <Link to={`/services/details/${_id}`}
+           
               aria-label=""
               className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
             >
               Learn more
-            </a>
+            </Link>
           </div>
         </div>
         </div>

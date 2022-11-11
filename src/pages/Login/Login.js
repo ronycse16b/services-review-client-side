@@ -84,10 +84,19 @@ const Login = () => {
 
 
     return (
+       <section>
+         <div className='bg-fixed bg-details' style={{
+            backgroundImage: `url("https://www.federalbank.co.in/documents/10180/85549705/Admin-Login.jpg/9d5536a9-ddb0-2472-da99-b1ff5a17308f?t=1646462776939")`, height: '200px'
+        }}>
+            <div className="hero-overlay bg-opacity-70 bg-black opc flex items-center justify-center">
+                <h1 className='text-center   text-white text-3xl font-bold'> My Account</h1>
+            </div>
+
+        </div>
         <div className='py-16'>
             <div className="w-full max-w-md p-8 space-y-3 rounded-xl  text-black mx-auto border shadow-lg">
                 <h1 className="text-2xl font-bold text-center mb-4">Sign in Page</h1>
-                < span className='text-red-600 py-3   font-bold ' >{error}</span>
+                < span className='text-red-600 py-3   font-bold ' >{error.slice(10,43)}</span>
                 <form onSubmit={signInfromHandel} className="space-y-6 ng-untouched ng-pristine ng-valid">
 
 
@@ -129,6 +138,7 @@ const Login = () => {
                 </p>
             </div>
         </div>
+       </section>
     );
 };
 

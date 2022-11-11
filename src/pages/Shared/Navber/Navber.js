@@ -90,7 +90,7 @@ const Navber = () => {
             {
               user?.uid ?
                 <div className="flex items-center">
-                  <li>
+                  
                     <Link to='/addservices'
 
                       aria-label="home"
@@ -99,7 +99,7 @@ const Navber = () => {
                     >
                       Add Services
                     </Link>
-                  </li>
+                  
 
                   <span className="font-bold">{user?.displayName}</span>
                   <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>

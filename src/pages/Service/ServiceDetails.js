@@ -3,6 +3,7 @@ import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 import {useNavigate } from 'react-router-dom';
 import './services.css'
+import ReviewAll from '../reviewShow/ReviewAll';
 
 
 const ServiceDetails = () => {
@@ -58,11 +59,12 @@ const handelReview = event=>{
 
   }).then(res=>res.json())
    .then(data=>{ console.log(data)
-    // if(data.acknowledged){
-    //    setAlert('Data Instered Successfully')
-    //    event.target.reset();
+    if(data.acknowledged){
+      event.target.reset();
+       setAlert('Review Added Successfully')
+      
      
-    // }
+    }
 
    })
  }
@@ -81,6 +83,7 @@ const handelReview = event=>{
         }}>
           <div className="hero-overlay bg-opacity-70 bg-black opc flex items-center justify-center">
              <h1  className='text-center   text-white text-3xl font-bold'> /Services/Details  /</h1>
+            
              </div>
             
         </div>
@@ -97,18 +100,19 @@ const handelReview = event=>{
               <div className="p-5 border border-t-0">
                 <p className="mb-3 text-xs font-semibold tracking-wide uppercase">
                   <a
-                    href="/"
+                 
                     className="transition-colors duration-200 text-blue-gray-900 hover:text-deep-purple-accent-700"
                     aria-label="Category"
                     title="traveling"
                   >
                     Services
                   </a>
+                  <h1  className='text-center    text-teal-700 text-3xl font-bold'> {alert}</h1>
                   <span className="text-gray-600">— Charge Price:{price}</span>
                   <span className="text-gray-600">— Rating:{rating}</span>
                 </p>
                 <a
-                  href="/"
+               
                   aria-label="Category"
                   title="Visit the East"
                   className="inline-block mb-3 text-2xl font-bold leading-5 transition-colors duration-200 hover:text-deep-purple-accent-700"
@@ -120,11 +124,7 @@ const handelReview = event=>{
                 </p>
 
                 <div>
-                    <h1>ServicesReview:</h1>
-                    {alert}
-                    <div>
-                      
-                    </div>
+                  <ReviewAll></ReviewAll>
                 </div>
 
                 <div className="flex flex-col max-w-xl p-8 shadow-sm rounded-xl lg:p-12 dark:bg-gray-900 dark:text-gray-100">

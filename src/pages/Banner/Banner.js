@@ -25,7 +25,7 @@ const Banner = () => {
                           quae.
                         </p>
                         <a
-                          href="/"
+                       
                           aria-label=""
                           className="inline-flex items-center font-semibold tracking-wider transition-colors duration-200 text-teal-accent-400 hover:text-teal-accent-700"
                         >
