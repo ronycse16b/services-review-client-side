@@ -15,9 +15,9 @@ const service = useLoaderData();
     return (
        <section>
          <div className='bg-fixed ' style={{ 
-            backgroundImage: `url("https://panci-electronic.com/images/Computer1.jpg")`,height: '300px'
+            backgroundImage: `url("https://www.technology-solved.com/wp-content/uploads/2020/07/troubleshoot-a-computer-main.jpg")`,height: '300px'
           }}>
-             <div className="hero-overlay bg-opacity-60 flex items-center justify-center">
+             <div className="hero-overlay bg-black  bg-opacity-70 opc flex items-center justify-center">
              <h1  className='text-center   text-white text-3xl font-bold'> All Services  /</h1>
              </div>
             

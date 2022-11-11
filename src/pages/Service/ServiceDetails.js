@@ -1,10 +1,13 @@
 import React, { useContext, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
-import { Navigate } from "react-router-dom";
+import {useNavigate } from 'react-router-dom';
+import './services.css'
 
 
 const ServiceDetails = () => {
+  const navigate = useNavigate();
+
 
   const { user } = useContext(AuthContext);
 
@@ -27,8 +30,9 @@ const handelReview = event=>{
 
 
  if(!user){
+ 
   window.confirm("Login First Then review");
-return <Navigate to="/login" replace={true} />;
+  navigate('/login');
 
  }else{
 
@@ -72,10 +76,13 @@ return <Navigate to="/login" replace={true} />;
   return (
     <div>
       <section>
-        <div className='bg-fixed' style={{
-          backgroundImage: `url("https://panci-electronic.com/images/Computer1.jpg")`, height: '300px'
+        <div className='bg-fixed bg-details' style={{
+          backgroundImage: `url("https://www.technology-solved.com/wp-content/uploads/2020/07/troubleshoot-a-computer-main.jpg")`, height: '300px'
         }}>
-          <h1 className='text-center  lg:pt-40  text-black text-3xl font-bold'> Services Details  /</h1>
+          <div className="hero-overlay bg-opacity-70 bg-black opc flex items-center justify-center">
+             <h1  className='text-center   text-white text-3xl font-bold'> /Services/Details  /</h1>
+             </div>
+            
         </div>
 
 
