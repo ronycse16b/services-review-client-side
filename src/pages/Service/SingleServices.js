@@ -46,7 +46,7 @@ const SingleServices = ({single_s}) => {
             aria-label=""
             className="inline-flex items-center font-semibold  text-deep-purple-accent-400 hover:text-deep-purple-800 btn  bg-slate-900 text-white transition duration-200 "
           >
-            Details More
+            View Details
           </Link>
         </div>
       </div>

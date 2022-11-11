@@ -1,47 +1,74 @@
-import React from 'react';
-import { createContext } from 'react';
-import {createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword} from 'firebase/auth';
-import app from '../../firebase/firebaseConfig';
+import React, { createContext } from 'react';
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut ,updateProfile } from 'firebase/auth';
+
 import { useState } from 'react';
 import { useEffect } from 'react';
+import app from '../../firebase/firebaseConfig';
 
-export const AuthContext = createContext();
-const auth = getAuth(app);
 
-const AuthProvider = ({children}) => {
-    // const [user, setUser] = useState(null);
-    // const [loading, setLoading] = useState(true);
+export const AuthContext = createContext()
 
-    // const createUser = (email, password) => {
-    //     setLoading(true);
-    //     return createUserWithEmailAndPassword(auth, email, password);
-    // }
+const auth = getAuth(app)
 
-    // const login = (email, password) =>{
-    //     setLoading(true);
-    //     return signInWithEmailAndPassword(auth, email, password);
-    // }
 
-    // useEffect( () =>{
-    //     const unsubscribe = onAuthStateChanged(auth, currentUser =>{
-    //         console.log(currentUser);
-    //         setUser(currentUser);
-    //         setLoading(false);
-    //     });
+const AuthProvider = ({ children }) => {
 
-    //     return () =>{
-    //         return unsubscribe();
-    //     }
-    // }, [])
+    const [user, setUser] = useState(null)
+    const [loading, setLoading] = useState(true)
 
-    const authInfo = {
 
-        user:'rony'
-        // user, 
-        // loading,
-        // createUser, 
-        // login
+    const providerLogin = (provider) => {
+        setLoading(true);
+        return signInWithPopup(auth, provider)
+
     }
+
+    const updateUserProfile = (profile) => {
+        setLoading(true);
+        return updateProfile(auth.currentUser,profile)
+    }
+
+
+    const gitProviderLogin = (provider) => {
+        setLoading(true);
+        return signInWithPopup(auth, provider)
+
+    }
+
+
+
+    const logOut = () => {
+        setLoading(true);
+        return signOut(auth)
+    }
+
+    const createUser = (email, password) => {
+        setLoading(true);
+        return createUserWithEmailAndPassword(auth, email, password)
+    }
+
+
+    const signIn = (email, password) => {
+        setLoading(true);
+        return signInWithEmailAndPassword(auth, email, password);
+    }
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+     
+            setUser(currentUser)
+            setLoading(false);
+        });
+
+        return () => {
+            unsubscribe();
+        }
+    }, [])
+
+
+
+
+    const authInfo = { user, providerLogin, logOut, createUser, signIn, loading, gitProviderLogin,updateUserProfile }
 
     return (
         <AuthContext.Provider value={authInfo}>

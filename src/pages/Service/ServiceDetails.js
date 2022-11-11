@@ -1,11 +1,73 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
+import { Navigate } from "react-router-dom";
 
 
 const ServiceDetails = () => {
 
+  const { user } = useContext(AuthContext);
+
+  const [userReview,setUserReview]= useState([])
+  const [alert,setAlert] = useState(null);
   const ServicesDetails = useLoaderData();
-  const { img, details, rating, title, price } = ServicesDetails;
+
+  const { img, details, rating, title, price,_id } = ServicesDetails;
+
+const handelReview = event=>{
+
+  event.preventDefault()
+
+  const form = event.target;
+  const textValue = form.review.value;
+
+
+
+
+
+
+ if(!user){
+  window.confirm("Login First Then review");
+return <Navigate to="/login" replace={true} />;
+
+ }else{
+
+  const  review = {
+    service_review: _id,
+    service_name: title,
+    service_massage: textValue,
+    reviwer_name:user.displayName,
+    reviwer_img:user.photoURL,
+    reviwer_email:user.email,
+  
+  }
+
+  fetch(`http://localhost:5000/review`, {
+
+
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify(review)
+
+
+  }).then(res=>res.json())
+   .then(data=>{ console.log(data)
+    // if(data.acknowledged){
+    //    setAlert('Data Instered Successfully')
+    //    event.target.reset();
+     
+    // }
+
+   })
+ }
+
+
+}
+
+
+  
 
   return (
     <div>
@@ -13,7 +75,7 @@ const ServiceDetails = () => {
         <div className='bg-fixed' style={{
           backgroundImage: `url("https://panci-electronic.com/images/Computer1.jpg")`, height: '300px'
         }}>
-          <h1 className='text-center  lg:pt-40  text-black text-3xl font-bold'> All Services  /</h1>
+          <h1 className='text-center  lg:pt-40  text-black text-3xl font-bold'> Services Details  /</h1>
         </div>
 
 
@@ -50,18 +112,26 @@ const ServiceDetails = () => {
                   {details}
                 </p>
 
+                <div>
+                    <h1>ServicesReview:</h1>
+                    {alert}
+                    <div>
+                      
+                    </div>
+                </div>
+
                 <div className="flex flex-col max-w-xl p-8 shadow-sm rounded-xl lg:p-12 dark:bg-gray-900 dark:text-gray-100">
-                  <div className="flex flex-col items-center w-full">
+                  <form onSubmit={handelReview} className="flex flex-col items-center w-full">
                     <h2 className="text-3xl font-semibold text-center">Your opinion matters!</h2>
                     <div className="flex flex-col items-center py-6 space-y-3">
                       <span className="text-center">How was your experience?</span>
 
                     </div>
                     <div className="flex flex-col w-full">
-                      <textarea rows="2" placeholder="Message..." className="p-4 rounded-md resize-none dark:text-gray-100 dark:bg-gray-900"></textarea>
-                      <button type="button" className="py-4 my-8 font-semibold rounded-md dark:text-gray-900 dark:bg-violet-400 btn-primary">Leave feedback</button>
+                      <input name='review' rows="2" placeholder="Message..." className="p-4 rounded-md resize-none dark:text-gray-100 dark:bg-gray-900 border-2" />
+                      <button type="submit" className="py-4 my-8 font-semibold rounded-md dark:text-gray-900 dark:bg-violet-400 btn-primary">Leave feedback</button>
                     </div>
-                  </div>
+                  </form>
 
                 </div>
               </div>

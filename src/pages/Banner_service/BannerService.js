@@ -4,7 +4,7 @@ import SingleBannerService from './SingleBannerService';
 
 const BannerService = () => {
 const [services , setService] = useState([]);
-console.log(services);
+
 useEffect(()=>{
 
 fetch('http://localhost:5000/banner_services')
@@ -31,7 +31,7 @@ fetch('http://localhost:5000/banner_services')
 
       </div>
       <div className='flex justify-center mt-4'>
-      <Link to='/allservices' className='btn btn-outline '>See All Services</Link>
+      <Link to='/services' className='btn btn-outline '>See All Services</Link>
       </div>
     </div>
     );

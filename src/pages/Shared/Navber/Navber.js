@@ -1,14 +1,27 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './Navber.css';
-import {Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 
 const Navber = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const { user, logOut } = useContext(AuthContext);
+  console.log(user);
+  const handelLogout = () => {
+    logOut()
+      .then(() => { })
+      .catch(error => console.error(error))
+
+
+
+
+  }
   return (
     <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
       <div className="relative flex items-center justify-between">
-       <Link to='/'
-         
+        <Link to='/'
+
           aria-label="Company"
           title="Company"
           className="inline-flex items-center"
@@ -34,8 +47,8 @@ const Navber = () => {
         </Link>
         <ul className="flex items-center hidden space-x-8 lg:flex">
           <li>
-           <Link to='/home'
-             
+            <Link to='/home'
+
               aria-label="home"
               title="home"
               className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
@@ -44,8 +57,8 @@ const Navber = () => {
             </Link>
           </li>
           <li>
-           <Link to='/services'
-             
+            <Link to='/services'
+
               aria-label="home"
               title="home"
               className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
@@ -54,18 +67,8 @@ const Navber = () => {
             </Link>
           </li>
           <li>
-           <Link to=''
-             
-              aria-label=" My Reviews"
-              title="My Reviews"
-              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-            >
-              My Reviews
-            </Link>
-          </li>
-          <li>
-           <Link to=''
-             
+            <Link to=''
+
               aria-label="About us"
               title="About us"
               className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
@@ -74,14 +77,50 @@ const Navber = () => {
             </Link>
           </li>
           <li>
-           <Link to=''
-             
-              className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide bg-slate-900 text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-              aria-label="Sign up"
-              title="Sign up"
-            >
-              Sign up
-            </Link>
+            {
+              user?.uid ?
+                <div className="flex items-center">
+                  <Link to=''
+                    aria-label=" My Reviews"
+                    title="My Reviews"
+                    className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 mr-4"
+                  >
+                    My Reviews
+                  </Link>
+                  <span className="font-bold">{user?.displayName}</span>
+                  <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
+                    {
+                      user?.photoURL ?
+
+                        <img src={user?.photoURL} alt="" className=" tooltip  ml-5 w-10 h-10 rounded-full  dark:bg-gray-500 ring-violet-400 ring-offset-gray-800"
+                        />
+                        : <img className="w-10 h-10 rounded-full " src="https://toppng.com/uploads/preview/app-icon-set-login-icon-comments-avatar-icon-11553436380yill0nchdm.png" alt="" />
+
+
+                    }
+                  </div>
+                  <button className="btn ml-4" onClick={handelLogout} >
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className=" w-5 h-5 fill-current dark:text-gray-400">
+                      <path d="M440,424V88H352V13.005L88,58.522V424H16v32h86.9L352,490.358V120h56V456h88V424ZM320,453.642,120,426.056V85.478L320,51Z"></path>
+                      <rect width="32" height="64" x="256" y="232"></rect>
+                    </svg>
+                    Logout</button>
+
+                </div>
+                :
+                <>
+                  <Link to='/login'
+
+                    className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide bg-slate-900 text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                    aria-label="Sign up"
+                    title="Sign up"
+                  >
+                    Login
+                  </Link>
+
+                </>
+            }
           </li>
         </ul>
         <div className="lg:hidden">
@@ -111,8 +150,8 @@ const Navber = () => {
               <div className="p-5 bg-white border rounded shadow-sm">
                 <div className="flex items-center justify-between mb-4">
                   <div>
-                   <Link to='/'
-                     
+                    <Link to='/'
+
                       aria-label="Company"
                       title="Company"
                       className="inline-flex items-center"
@@ -156,8 +195,8 @@ const Navber = () => {
                 <nav>
                   <ul className="space-y-4">
                     <li>
-                     <Link to='/home'
-                       
+                      <Link to='/home'
+
                         aria-label="home"
                         title="home"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
@@ -166,8 +205,8 @@ const Navber = () => {
                       </Link>
                     </li>
                     <li>
-                     <Link to='/services'
-                       
+                      <Link to='/services'
+
                         aria-label="home"
                         title="home"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
@@ -176,8 +215,8 @@ const Navber = () => {
                       </Link>
                     </li>
                     <li>
-                     <Link to=''
-                       
+                      <Link to=''
+
                         aria-label="My Reviews"
                         title=" My Reviews"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
@@ -186,8 +225,8 @@ const Navber = () => {
                       </Link>
                     </li>
                     <li>
-                     <Link to=''
-                     
+                      <Link to=''
+
                         aria-label="About us"
                         title="About us"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
@@ -196,8 +235,8 @@ const Navber = () => {
                       </Link>
                     </li>
                     <li>
-                     <Link to=''
-                      
+                      <Link to=''
+
                         className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                         aria-label="Sign up"
                         title="Sign up"

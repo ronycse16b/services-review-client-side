@@ -7,10 +7,10 @@ import SingleServices from './SingleServices';
 const Service = () => {
 
 const auth =useContext(AuthContext);
-console.log(auth);
+
 
 const service = useLoaderData();
-console.log(Service);
+
 
     return (
        <section>
