@@ -2,12 +2,13 @@ import React, { useContext, useState } from 'react';
 import './Navber.css';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
+import logo from './logo.png'
 
 const Navber = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const { user, logOut } = useContext(AuthContext);
-  console.log(user);
+
   const handelLogout = () => {
     logOut()
       .then(() => { })
@@ -26,21 +27,7 @@ const Navber = () => {
           title="Company"
           className="inline-flex items-center"
         >
-          <svg
-            className="w-8 text-deep-purple-accent-400"
-            viewBox="0 0 24 24"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeMiterlimit="10"
-            stroke="currentColor"
-            fill="none"
-          >
-            <rect x="3" y="1" width="7" height="12" />
-            <rect x="3" y="17" width="7" height="6" />
-            <rect x="14" y="1" width="7" height="6" />
-            <rect x="14" y="11" width="7" height="12" />
-          </svg>
+          <img src={logo} className='lg:w-32 w-20' alt="" />
           <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
             Computer Solution
           </span>
@@ -77,7 +64,7 @@ const Navber = () => {
           </li>
 
           <li>
-            <Link to=''
+            <Link to='/blog'
 
               aria-label="About us"
               title="Blog"
@@ -90,16 +77,16 @@ const Navber = () => {
             {
               user?.uid ?
                 <div className="flex items-center">
-                  
-                    <Link to='/addservices'
 
-                      aria-label="home"
-                      title="addservices"
-                      className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 mr-5"
-                    >
-                      Add Services
-                    </Link>
-                  
+                  <Link to='/addservices'
+
+                    aria-label="home"
+                    title="addservices"
+                    className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 mr-5"
+                  >
+                    Add Services
+                  </Link>
+
 
                   <span className="font-bold">{user?.displayName}</span>
                   <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
@@ -160,7 +147,7 @@ const Navber = () => {
             </svg>
           </button>
           {isMenuOpen && (
-            <div className="absolute top-0 left-0 w-full">
+            <div className="absolute top-0 left-0 w-full z-50">
               <div className="p-5 bg-white border rounded shadow-sm">
                 <div className="flex items-center justify-between mb-4">
                   <div>
@@ -170,21 +157,7 @@ const Navber = () => {
                       title="Company"
                       className="inline-flex items-center"
                     >
-                      <svg
-                        className="w-8 text-deep-purple-accent-400"
-                        viewBox="0 0 24 24"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeMiterlimit="10"
-                        stroke="currentColor"
-                        fill="none"
-                      >
-                        <rect x="3" y="1" width="7" height="12" />
-                        <rect x="3" y="17" width="7" height="6" />
-                        <rect x="14" y="1" width="7" height="6" />
-                        <rect x="14" y="11" width="7" height="12" />
-                      </svg>
+                        <img src={logo} className='lg:w-32 w-20' alt="" />
                       <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
                         Company
                       </span>
@@ -229,7 +202,7 @@ const Navber = () => {
                       </Link>
                     </li>
                     <li>
-                      <Link to=''
+                      <Link to='/reviews'
 
                         aria-label="My Reviews"
                         title=" My Reviews"
@@ -239,14 +212,65 @@ const Navber = () => {
                       </Link>
                     </li>
                     <li>
-                      <Link to=''
+                      <Link to='/blog'
 
                         aria-label="About us"
                         title="About us"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
-                        About us
+                      Blog
                       </Link>
+                    </li>
+
+                    <li>
+                      {
+                        user?.uid ?
+                          <div className="flex items-center">
+
+                            <Link to='/addservices'
+
+                              aria-label="home"
+                              title="addservices"
+                              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 mr-5"
+                            >
+                              Add Services
+                            </Link>
+
+
+                            <span className="font-bold">{user?.displayName}</span>
+                            <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
+                              {
+                                user?.photoURL ?
+
+                                  <img src={user?.photoURL} alt="" className=" tooltip  ml-5 w-10 h-10 rounded-full  dark:bg-gray-500 ring-violet-400 ring-offset-gray-800"
+                                  />
+                                  : <img className="w-10 h-10 rounded-full " src="https://toppng.com/uploads/preview/app-icon-set-login-icon-comments-avatar-icon-11553436380yill0nchdm.png" alt="" />
+
+
+                              }
+                            </div>
+                            <button className="btn ml-4" onClick={handelLogout} >
+
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className=" w-5 h-5 fill-current dark:text-gray-400">
+                                <path d="M440,424V88H352V13.005L88,58.522V424H16v32h86.9L352,490.358V120h56V456h88V424ZM320,453.642,120,426.056V85.478L320,51Z"></path>
+                                <rect width="32" height="64" x="256" y="232"></rect>
+                              </svg>
+                              Logout</button>
+
+                          </div>
+                          :
+                          <>
+                            <Link to='/login'
+
+                              className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide bg-slate-900 text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                              aria-label="Sign up"
+                              title="Sign up"
+                            >
+                              Login
+                            </Link>
+
+                          </>
+                      }
                     </li>
                     <li>
                       <Link to=''

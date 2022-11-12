@@ -16,6 +16,11 @@ const ServiceDetails = () => {
   const [alert,setAlert] = useState(null);
   const ServicesDetails = useLoaderData();
 
+  if(alert){
+    window.alert("Review Added Successfully");
+    window.location.reload();
+  }
+
   const { img, details, rating, title, price,_id } = ServicesDetails;
 
 const handelReview = event=>{
@@ -38,7 +43,7 @@ const handelReview = event=>{
  }else{
 
   const  review = {
-    service_review: _id,
+    service_id: _id,
     service_name: title,
     service_img: img,
     service_massage: textValue,
@@ -108,7 +113,7 @@ const handelReview = event=>{
                   >
                     Services
                   </a>
-                  <h1  className='text-center    text-teal-700 text-3xl font-bold'> {alert}</h1>
+
                   <span className="text-gray-600">— Charge Price:{price}</span>
                   <span className="text-gray-600">— Rating:{rating}</span>
                 </p>
@@ -125,7 +130,7 @@ const handelReview = event=>{
                 </p>
 
                 <div>
-                  <ReviewAll></ReviewAll>
+                  <ReviewAll ServicesDetails={ServicesDetails}></ReviewAll>
                 </div>
 
                 <div className="flex flex-col max-w-xl p-8 shadow-sm rounded-xl lg:p-12 dark:bg-gray-900 dark:text-gray-100">

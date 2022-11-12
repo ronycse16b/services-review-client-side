@@ -31,7 +31,7 @@ fetch('http://localhost:5000/banner_services')
 
       </div>
       <div className='flex justify-center mt-4'>
-      <Link to='/services' className='btn btn-outline '>See All Services</Link>
+      <Link to='/services' className='btn btn-outline bg-zinc-800 text-white'>See All Services</Link>
       </div>
     </div>
     );

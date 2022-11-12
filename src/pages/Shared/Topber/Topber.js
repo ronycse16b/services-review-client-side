@@ -5,7 +5,7 @@ const Topber = () => {
     return (
 
         <div className="top-bar-area inc-pad bg-gradient text-white ">
-            <div className="container mx-auto flex justify-between  py-4 lg:px-52">
+            <div className="container mx-auto flex justify-between md:px-7  py-4 lg:px-52">
                 <div className='flex items-center'>
                     <span>Dhaka</span> | <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5  ">
 						<path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>

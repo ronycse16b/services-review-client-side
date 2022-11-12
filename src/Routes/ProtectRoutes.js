@@ -1,3 +1,5 @@
+import './Loader.css';
+
 import React from 'react';
 import { useContext } from 'react';
 import { Navigate,useLocation } from 'react-router-dom';
@@ -12,7 +14,7 @@ const ProtectRoutes = ({children}) => {
 
 if(loading)
 {
- return <p>Loading ....</p>;
+ return <p className="loader"> Loading...</p>;
 }
 
 if(user && user.uid){
