@@ -40,6 +40,7 @@ const handelReview = event=>{
   const  review = {
     service_review: _id,
     service_name: title,
+    service_img: img,
     service_massage: textValue,
     reviwer_name:user.displayName,
     reviwer_img:user.photoURL,
